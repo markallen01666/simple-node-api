@@ -9,8 +9,13 @@ app.get('/', (req, res) => {
   res.json(data)
 })
 
-app.listen(3000, () => {
-  console.log('Simple Node API started - listening on port: 3000')
+// Port allocation and default for Heroku commit
+let port = process.env.port
+if (port === null || port === '') {
+  port = 4000
+}
+app.listen(port, () => {
+  console.log(`Simple Node API started - listening on port: ${port}`)
 })
 
 const data = {
