@@ -10,8 +10,8 @@ app.get('/', (req, res) => {
 })
 
 // Port allocation and default for Heroku commit
-let port = process.env.port
-if (port === null || port === '') {
+let port = process.env.PORT
+if (port == null || port == '') {
   port = 4000
 }
 app.listen(port, () => {
